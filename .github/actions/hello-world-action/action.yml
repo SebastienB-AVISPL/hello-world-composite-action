@@ -21,5 +21,8 @@ runs:
       shell: bash
     - run: pwd; ls -al .; ls -al ./scripts/; cat ./scripts/goodbye.sh
       shell: bash
+    # WARNING script must have +x permission
+    # Run this command when adding it script to Git:
+    # git update-index --chmod=+x ./scripts/goodbye.sh
     - run: ./scripts/goodbye.sh
       shell: bash
