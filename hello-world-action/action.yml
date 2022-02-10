@@ -28,10 +28,10 @@ runs:
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - run: pwd; ls -al .; cat ./goodbye.sh
+    - run: pwd; ls -al .; cat GITHUB_ACTION_PATH/goodbye.sh
       shell: bash
     # WARNING script must have +x permission
     # Run this command when adding it script to Git:
     # git update-index --chmod=+x ./scripts/goodbye.sh
-    - run: ./goodbye.sh
+    - run: GITHUB_ACTION_PATH/goodbye.sh
       shell: bash
