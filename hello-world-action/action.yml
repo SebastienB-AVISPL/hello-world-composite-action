@@ -18,6 +18,14 @@ runs:
     - id: random-number-generator
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
       shell: bash
+    - run: echo "github.action_path ${{ github.action_path }}"
+      shell: bash
+    - run: echo "GITHUB_ACTION_PATH ${GITHUB_ACTION_PATH}"
+      shell: bash
+    - run: ls -al ${{ github.action_path }} || echo "error"
+      shell: bash
+    - run: ls -al ${GITHUB_ACTION_PATH} || echo "error"
+      shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
     - run: pwd; ls -al .; ls -al ./scripts/; cat ./scripts/goodbye.sh
